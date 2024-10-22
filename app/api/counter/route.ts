@@ -9,6 +9,9 @@ const createCounter = () => {
     decrement: () => {
       counter--;
     },
+    reset: () => {
+      counter = 0;
+    },
     get: () => counter,
   };
 };
@@ -26,6 +29,9 @@ export async function POST(req: NextRequest) {
     counter.increment();
   }
   if (action === "decrement") {
+    counter.decrement();
+  }
+  if (action === "reset") {
     counter.decrement();
   }
   const count = counter.get();
