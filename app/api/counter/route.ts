@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     counter.decrement();
   }
   if (action === "reset") {
-    counter.decrement();
+    counter.reset();
   }
   const count = counter.get();
   return NextResponse.json({ count });
